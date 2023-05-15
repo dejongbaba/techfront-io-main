@@ -1,11 +1,9 @@
-import { Disclosure } from '@headlessui/react';
-import { Bars3Icon } from '@heroicons/react/24/outline';
+import {Disclosure} from '@headlessui/react';
+import {Bars3Icon} from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import React from 'react';
 import Drawer from "./Drawer";
 import Drawerdata from "./Drawerdata";
-import Signdialog from "./Signdialog";
-import Registerdialog from "./Registerdialog";
 import Contactus from "./Contactus";
 
 
@@ -20,7 +18,7 @@ const navigation: NavigationItem[] = [
     { name: 'Courses', href: '#courses-section', current: false },
     { name: 'Mentors', href: '#mentors-section', current: false },
     { name: 'Testimonial', href: '#testimonial-section', current: false },
-    { name: 'Join', href: '#join-section', current: false },
+    // { name: 'Join', href: '#join-section', current: false },
 ]
 
 function classNames(...classes: string[]) {
@@ -32,7 +30,7 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = React.useState(false);
 
     return (
-        <Disclosure as="nav" className="bg-lightpink navbar">
+        <Disclosure as="nav" className="bg-secondary navbar">
             <>
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="relative flex h-20 items-center justify-between">
@@ -41,16 +39,20 @@ const Navbar = () => {
                             {/* LOGO */}
 
                             <div className="flex flex-shrink-0 items-center">
-                                <img
-                                    className="block h-30px w-30px lg:hidden"
-                                    src={'/assets/logo/Logo.svg'}
-                                    alt="Courses-Logo"
-                                />
-                                <img
-                                    className="hidden h-48px w-48px lg:block"
-                                    src={'/assets/logo/Logo.svg'}
-                                    alt="Courses-Logo"
-                                />
+                                <div
+                                    className="bg-primary text-white font-bold py-2 px-4 rounded block h-30px w-30px lg:hidden"
+                                    // src={'/assets/logo/Logo.svg'}
+                                    // alt="Courses-Logo"
+                                >
+                                    Tech<span className='text-secondary'>front.io</span>
+                                </div>
+                                <div
+                                    className="text-3xl font-extrabold text-primary hidden h-48px w-48px lg:block"
+                                    // src={'/assets/logo/Logo.svg'}
+                                    // alt="Courses-Logo"
+                                >
+                                    Tech<span className='text-secondary logo-half'>front.io</span>
+                                </div>
                             </div>
 
                             {/* LINKS */}
@@ -62,7 +64,7 @@ const Navbar = () => {
                                             key={item.name}
                                             href={item.href}
                                             className={classNames(
-                                                item.current ? ' text-purple' : 'hover:text-purple',
+                                                item.current ? ' text-primary' : 'hover:text-primary',
                                                 'px-3 py-4 text-15px font-medium space-links'
                                             )}
                                             aria-current={item.href ? 'page' : undefined}
@@ -70,19 +72,19 @@ const Navbar = () => {
                                             {item.name}
                                         </Link>
                                     ))}
-                                    <Contactus />
                                 </div>
                             </div>
                         </div>
 
                         {/* SIGNIN DIALOG */}
 
-                        <Signdialog />
+                        {/*<Signdialog />*/}
 
 
                         {/* REGISTER DIALOG */}
+                        <Contactus />
 
-                        <Registerdialog />
+                        {/*<Registerdialog />*/}
 
 
                         {/* DRAWER FOR MOBILE VIEW */}

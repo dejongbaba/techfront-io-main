@@ -43,12 +43,15 @@ const Contactusform = () => {
             <div className=" inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto md:ml-6 sm:pr-0">
             <div className='md:hidden'>
                     <button type="button" className='text-15px font-medium' onClick={openModal}>
-                        Contact Us
+                        Get Started
                     </button>
                 </div>
                 <div className='hidden md:block'>
-                    <button type="button" className='text-15px font-medium space-links' onClick={openModal}>
-                        Contact Us
+                    {/*<button type="button" className='text-15px font-medium space-links' onClick={openModal}>*/}
+                    {/*    Contact Us*/}
+                    {/*</button>*/}
+                    <button className="bg-primary hover:bg-primary hover:text-white text-white text-15px font-medium ml-8 py-4 px-5 rounded" onClick={openModal}>
+                        Get Started
                     </button>
                 </div>
             </div>
@@ -131,7 +134,7 @@ const Contactusform = () => {
                                             <button type="submit"
                                                 onClick={handleClick}
                                                 disabled={isDisabled}
-                                                className="py-3 px-5 text-sm disabled:opacity-50 font-medium w-full text-center text-white rounded-lg bg-purple  hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Send message</button>
+                                                className="py-3 px-5 text-sm disabled:opacity-50 font-medium w-full text-center text-white rounded-lg bg-primary  hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Send message</button>
 
                                         </form>
 
